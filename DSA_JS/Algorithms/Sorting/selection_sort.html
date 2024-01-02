@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selection Sort with JavaScript</title>
+    <script>
+      //   let items = [20, 12, 53, 3];
+      let items = [12, 90, 18, 100, 15, 40,0];
+      function selectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i - 1; j < data.length; j++) {
+            if (data[j] < data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+
+      selectionSort(items);
+      console.warn(items);
+    </script>
+  </head>
+  <body>
+    <h1>Selection Sort with JavaScript</h1>
+  </body>
+</html>
+<!-- 
+1 time loop = O(n**2) -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reverse String with Stack with class in JavaScript</title>
+    <script>
+      class Stack {
+        constructor() {
+          this.item = [];
+        }
+
+        push(newVal) {
+          this.item.push(newVal);
+        }
+
+        pop() {
+          if (this.isEmpty()) {
+            return "Stack is empty";
+          }
+          return this.item.pop();
+        }
+
+        isEmpty() {
+          return this.item.length === 0;
+        }
+
+        reverseString(inputString) {
+          for (let i = 0; i < inputString.length; i++) {
+            this.push(inputString[i]);
+          }
+          let reverseString = "";
+          while (!this.isEmpty()) {
+            reverseString += this.pop();
+          }
+          return reverseString;
+        }
+      }
+
+      const st1 = new Stack();
+      const inputString = "Kajal";
+      const reverse = st1.reverseString(inputString);
+      console.log("Original String: " + inputString);
+      console.log("Reverse String: " + reverse);
+    </script>
+  </head>
+  <body>
+    <h1>Reverse String with Stack with class in JavaScript</h1>
+  </body>
+</html>
